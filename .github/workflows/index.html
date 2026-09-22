@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>লগইন ও রেজিস্ট্রেশন</title>
+  <style>
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; margin: 0; }
+    .container { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 320px; }
+    h2 { text-align: center; margin-bottom: 20px; }
+    input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #218838; }
+    .toggle { text-align: center; margin-top: 15px; font-size: 14px; cursor: pointer; color: #007bff; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- রেজিস্ট্রেশন ফর্ম -->
+  <form id="register-form" action="/register" method="POST">
+    <h2>রেজিস্ট্রেশন করুন</h2>
+    <input type="text" name="name" placeholder="আপনার নাম" required>
+    <input type="email" name="email" placeholder="ইমেইল অ্যাড্রেস" required>
+    <input type="password" name="password" placeholder="পাসওয়ার্ড" required>
+    <button type="submit">রেজিস্টার</button>
+    <div class="toggle" onclick="toggleForm()">ইতিমধ্যে অ্যাকাউন্ট আছে? লগইন করুন</div>
+  </form>
+
+  <!-- লগইন ফর্ম -->
+  <form id="login-form" action="/login" method="POST" class="hidden">
+    <h2>লগইন করুন</h2>
+    <input type="email" name="email" placeholder="ইমেইল অ্যাড্রেস" required>
+    <input type="password" name="password" placeholder="পাসওয়ার্ড" required>
+    <button type="submit">লগইন</button>
+    <div class="toggle" onclick="toggleForm()">নতুন অ্যাকাউন্ট তৈরি করুন</div>
+  </form>
+</div>
+
+<script>
+  function toggleForm() {
+    document.getElementById('register-form').classList.toggle('hidden');
+    document.getElementById('login-form').classList.toggle('hidden');
+  }
+</script>
+
+</body>
+</html>teCIIo
